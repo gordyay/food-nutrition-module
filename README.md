@@ -212,7 +212,7 @@ exist in [this](https://drive.google.com/file/d/1jn0t5tU_RgOpq4wcO-uS4D0_NAP6MwH
 program 
 * Similar Recipes 
   * For each recipe from the dataset, collect the URL from epicurious.com with
-  its details (if there is no URL for that recipe, find a similar on the Internet). 
+  its details (if there is no URL for that recipe, skip it).
   * Save the new dataframe to a CSV file that you will use in your main program.
 
 ## Chapter V
