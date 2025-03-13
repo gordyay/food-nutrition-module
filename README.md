@@ -75,8 +75,7 @@ precalculated output instead of performing the exercise correctly.
 neighbor on the left.
 * Your reference material: mates / Internet / Google.
 * You can ask questions in Slack.
-* Read the examples carefully. They may require things that are not otherwise spec-
-ified in the subject.
+* Read the examples carefully. They may require things that are not otherwise specified in the subject.
 * And may the Force be with you!
 
 ## Chapter III
