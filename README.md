@@ -156,8 +156,7 @@ in the classes and methods above in a Jupyter Notebook (recipes.ipynb).
     * Use [the dataset](https://drive.google.com/file/d/1hzmxNBrY7-9mv5EpqAvhVUiJahfrcYUN/view?usp=sharing) from Epicurious collected by HugoDarwood. 
     * Filter the columns: the less non-ingredient columns in your
 dataset the
-better. You will predict the rating or rating category using only the in-
-gredients and nothing else. 
+better. You will predict the rating or rating category using only the ingredients and nothing else. 
   * Regression 
     * Try different algorithms and their hyperparameters for rating
 prediction.
@@ -184,8 +183,7 @@ classes ‘bad’
 (0, 1), ‘so-so’ (2, 3), ‘great’ (4, 5). 
     * Try different algorithms and their hyperparameters for class
 prediction.
-Choose the best on cross-validation and find the score on the test subsam-
-ple. 
+Choose the best on cross-validation and find the score on the test subsample. 
     * Compare the metrics using accuracy. Calculate the accuracy of a
 naive
 classificator that predicts the most common class. 
@@ -205,9 +203,8 @@ find the score on the test subsample.
 classification.
 Save the best model. You will use it in the program.
 * Nutrition Facts
-  * Collect all the nutrition facts for the ingredients from your prepared and fil-
-tered dataset (only ingredient columns) into a dataframe. Use [the following API](https://fdc.nal.usda.gov/api-guide.html) for that. 
-  * Transform all the values into % of the daily value. Keep only ingredients that
+  * Collect all the nutrition facts for the ingredients from your prepared and filtered dataset (only ingredient columns) into a dataframe. Use [the following API](https://fdc.nal.usda.gov/api-guide.html) for that. 
+  * Transform all the values into % of the daily value. Keep only nutrients that
 exist in [this](https://drive.google.com/file/d/1jn0t5tU_RgOpq4wcO-uS4D0_NAP6MwHz/view?usp=sharing) and [that](https://drive.google.com/file/d/1bmdZGB0QwND2BD3XlC1JswL7AdnTJHLT/view?usp=sharing) table. 
   * Save the transformed dataframe into a CSV file that you will use in your main
 program 
@@ -245,13 +242,11 @@ Ingredients:
 - spinach
 - tomato
 Nutrients:
-- calories: 7.5%
 - protein: 16%
 - fat: 10%
 - sodium: 7 %
 - ...
-URL: https://www.epicurious.com/recipes/food/views/feta-spinach-and-
-basil-omelette-muffins
+URL: https://www.epicurious.com/recipes/food/views/feta-spinach-and-basil-omelette-muffins
 LUNCH
 ---------------------
 ...
