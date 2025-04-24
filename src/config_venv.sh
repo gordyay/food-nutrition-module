@@ -1,24 +1,31 @@
 #!/bin/bash
 
-# Проверяем, активирована ли виртуальная среда
+# If you want the environment activation to persist in your current terminal, use source to run the script
+# source config_venv.sh
 if [[ -n "$VIRTUAL_ENV" ]]; then
-    echo "Virtual environment is active. Deactivating..."
+    echo -e "\e[32mVirtual environment is active. Deactivating...\e[0m"
     deactivate
-    echo "Virtual environment deactivated."
+    echo -e "\e[32mVirtual environment deactivated.\e[0m"
 else
-    echo "No virtual environment is currently active."
+    echo -e "\e[32mNo virtual environment is currently active.\e[0m"
 fi
 
-echo "Creating virtual environment..."
-python3 -m venv venv
+echo -e "\e[32mCreating virtual environment...\e[0m"
+python3 -m venv venv || { echo -e "\e[31mFailed to create virtual environment\e[0m";}
 
-echo "Activating virtual environment..."
-source venv/bin/activate
+echo -e "\e[32mActivating virtual environment...\e[0m"
+source venv/bin/activate || { echo -e "\e[31mFailed to activate virtual environment\e[0m";}
 
-echo "Installing requirements..."
-pip install -r requirements.txt
+if [[ -z "$VIRTUAL_ENV" ]]; then
+    echo -e "\e[31mError: Virtual environment is not active. Aborting installation\e[0m"
+else
 
-echo "Installing Jupyter kernel..."
-python3 -m ipykernel install --user --name=my_venv
 
-echo "Now reboot VS Code for changes to take effect."
+    echo -e "\e[32mInstalling requirements...\e[0m"
+    pip install -r requirements.txt || { echo -e "\e[31mFailed to install requirements\e[0m";}
+
+    echo -e "\e[32mInstalling Jupyter kernel...\e[0m"
+    python3 -m ipykernel install --user --name=my_venv || { echo -e "\e[31mFailed to install Jupyter kernel\e[0m";}
+
+    echo -e "\e[32mSetup completed.\e[0m"
+fi
