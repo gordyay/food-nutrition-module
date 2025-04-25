@@ -1,0 +1,10 @@
+pandas 
+numpy
+ipykernel
+scikit-learn
+matplotlib
+seaborn
+joblib
+ipywidgets
+tqdm
+requests

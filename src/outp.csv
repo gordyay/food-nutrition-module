@@ -1,0 +1,45 @@
+,nutrientName,unitName,value
+50,PUFA 22:5 n-3 (DPA),G,0.024
+51,PUFA 22:6 n-3 (DHA),G,0.006
+52,"Fatty acids, total saturated",G,12.6
+53,"Fatty acids, total monounsaturated",G,15.8
+54,"Fatty acids, total polyunsaturated",G,6.0
+55,"Fatty acids, total trans",G,0.15
+56,Ash,G,6.33
+57,Nitrogen,G,6.54
+58,Total lipid (fat),G,36.5
+59,Water,G,14.2
+60,"Calcium, Ca",MG,13.0
+61,"Copper, Cu",MG,0.13
+62,"Iron, Fe",MG,1.28
+63,"Magnesium, Mg",MG,36.5
+64,"Manganese, Mn",MG,0.02
+65,"Phosphorus, P",MG,415.0
+66,"Potassium, K",MG,557.0
+67,"Sodium, Na",MG,1830.0
+68,"Zinc, Zn",MG,3.56
+69,Fructose,G,0.01
+70,Glucose,G,0.04
+71,Lactose,G,0.0
+72,Maltose,G,0.0
+73,Sucrose,G,3.09
+74,Galactose,G,0.0
+75,"Sugars, Total",G,3.14
+76,Protein,G,40.9
+77,"Fatty acids, total trans-monoenoic",G,0.126
+78,"Fatty acids, total trans-dienoic",G,0.024
+79,"Fatty acids, total trans-polyenoic",G,0.0
+80,MUFA 22:1 c,G,0.009
+81,MUFA 17:1 c,G,0.094
+82,PUFA 18:2 c,G,5.27
+83,PUFA 18:3 c,G,0.239
+84,PUFA 20:3 c,G,0.074
+85,PUFA 20:4c,G,0.16
+86,PUFA 20:5c,G,0.003
+87,PUFA 22:5 c,G,0.024
+88,PUFA 22:6 c,G,0.006
+89,PUFA 20:2 c,G,0.214
+90,Total fat (NLEA),G,34.6
+91,"Carbohydrate, by difference",G,2.1
+92,Energy,KCAL,500.0
+93,Energy,kJ,2090.0
