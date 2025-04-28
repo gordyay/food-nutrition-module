@@ -3,7 +3,7 @@
     "rating": false,
     "calories": false,
     "protein": false,
-    "fat": true,
+    "fat": false,
     "sodium": false,
     "#cakeweek": false,
     "#wasteless": false,
