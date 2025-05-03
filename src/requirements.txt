@@ -8,3 +8,4 @@ joblib
 ipywidgets
 tqdm
 requests
+xgboost
