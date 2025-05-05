@@ -9,3 +9,4 @@ ipywidgets
 tqdm
 requests
 xgboost
+lightgbm
