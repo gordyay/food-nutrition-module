@@ -2,9 +2,7 @@ import pandas as pd
 import joblib
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
-import random # For bonus
 
-# Define constants for file paths (makes it easier to manage)
 MODEL_PATH = 'data/best_classifier_model.joblib'
 # Assuming you save the feature list, e.g. as a pickle file or list within the model object
 # FEATURE_LIST_PATH = 'data/ingredient_features.pkl'
