@@ -9,5 +9,5 @@ ipywidgets
 tqdm
 requests
 xgboost
-catboost
 imblearn
+bs4

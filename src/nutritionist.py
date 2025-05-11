@@ -45,7 +45,6 @@ def main():
     except Exception as e:
         print(f"Failed to initialize the application: {e}", file=sys.stderr)
         sys.exit(1)
-
     ingredients_list = [s.strip() for s in args.ingredients.split(',') if s.strip()]
     if not ingredients_list:
         print("Error: No valid ingredients provided.", file=sys.stderr)
@@ -56,12 +55,12 @@ def main():
     # 1. Forecast Rating
     print("I. OUR FORECAST")
     rating_class = app.predict_rating_class(ingredients_list)
-    if rating_class == 0 or rating_class == 1:
+    if rating_class == 0:
         print("You might find it tasty, but in our opinion, it is a bad idea to have a")
         print("dish with that list of ingredients.")
-    elif rating_class == 2 or rating_class == 3:
+    elif rating_class == 1:
         print("This combination seems okay, potentially a so-so dish.")
-    elif rating_class == 4 or rating_class == 5:
+    elif rating_class == 2:
         print("This looks promising! It might be a great dish.")
     elif rating_class == 'unknown':
             print("Could not make a prediction. Input ingredients might not be recognized.")

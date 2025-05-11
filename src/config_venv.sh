@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# If you want the environment activation to persist in your current terminal, use source to run the script
+# If you want the en    vironment activation to persist in your current terminal, use source to run the script
 # source config_venv.sh
 if [[ -n "$VIRTUAL_ENV" ]]; then
     echo -e "\e[32mVirtual environment is active. Deactivating...\e[0m"
