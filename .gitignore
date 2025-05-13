@@ -50,3 +50,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 src/venv/
+src/data/recipes_for_similarity.csv
+best_classifier_model.joblib
+

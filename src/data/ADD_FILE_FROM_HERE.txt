@@ -1,0 +1,6 @@
+by all means, git forbade me to push the model. It's too big, even archived, and even via LFS
+
+DOWNLOAD MODEL FROM HERE 
+https://disk.yandex.ru/d/PQhxuXKwS8r-nw
+
+upload the installed file to the src/data folder

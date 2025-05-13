@@ -57,6 +57,8 @@ class NutritionApp:
     def __init__(self):
         """Loads necessary data and the trained model."""
         try:
+            if not Path(MODEL_PATH).exists():
+                print("ERROR : Model file not found.\n PLS check data folder and download the model")
             self.model = joblib.load(MODEL_PATH)
             if hasattr(self.model, 'feature_names_in_'):
                  self.ingredient_features = self.model.feature_names_in_
@@ -188,7 +190,7 @@ class NutritionApp:
                 "dataType": ["Foundation"]  
             }
             cache=load_nutrients_cache(f"{DATA_PATH}ingridient_nutr_cache.json")
-            if not ingredient in cache:
+            if ingredient in cache:
                 return cache[ingredient]
             else:
                 response = requests.get('https://api.nal.usda.gov/fdc/v1/foods/search', params=params)
