@@ -4,6 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import json
 import requests
+from pathlib import Path
 DATA_PATH='data/'
 
 MODEL_PATH = f"{DATA_PATH}best_classifier_model.joblib"
@@ -64,7 +65,10 @@ class NutritionApp:
                  # Handle error or load from separate file - essential step!
                  raise ValueError("Could not determine ingredient features from model.")
             self.daily_values = self._load_daily_values()
-            self.recipes_df = pd.read_csv(RECIPE_DATA_PATH)
+            if Path(RECIPE_DATA_PATH).exists():
+                self.recipes_df = pd.read_csv(RECIPE_DATA_PATH)
+            else:
+                self.recipes_df = pd.read_csv(f"{RECIPE_DATA_PATH}.gz", compression='gzip')
             self.recipe_vectors = self.recipes_df[self.ingredient_features].values
         except FileNotFoundError as e:
             print(f"Error loading data file: {e}. Make sure research notebook generated files.")
@@ -184,10 +188,9 @@ class NutritionApp:
                 "dataType": ["Foundation"]  
             }
             cache=load_nutrients_cache(f"{DATA_PATH}ingridient_nutr_cache.json")
-            non_ingredient_cache=load_nutrients_cache(f"{DATA_PATH}not_ingridient_cache.json")
-            if ingredient in cache:
+            if not ingredient in cache:
                 return cache[ingredient]
-            elif ingredient not in non_ingredient_cache:
+            else:
                 response = requests.get('https://api.nal.usda.gov/fdc/v1/foods/search', params=params)
                 if response.status_code == 200:
                     ingredient_info = response.json().get('foods')
@@ -198,8 +201,7 @@ class NutritionApp:
                         nutrient_df=pd.json_normalize(ingredient_info)[['nutrientName','unitName','value']]
                         nutrient_dict=nutrient_df[nutrient_df['nutrientName'].isin(nutrients_list)].to_dict()       
                         save_to_cache(f"{DATA_PATH}ingridient_nutr_cache.json",ingredient, nutrient_dict, cache)
-            if not ingredient_info:
-                save_to_cache(f"{DATA_PATH}not_ingridient_cache.json",ingredient, ingredient_info, non_ingredient_cache)
+                        ingredient_info=nutrient_dict
             return ingredient_info
       
         """Retrieves nutrition information (%DV) for a list of ingredients."""
@@ -255,5 +257,3 @@ class NutritionApp:
         except Exception as e:
             print(f"Error finding similar recipes: {e}")
             return []
-
- 
